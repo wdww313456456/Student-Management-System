@@ -90,3 +90,35 @@ int main()
 				break;
 			}
 	}
+// 修改学生
+void modify_stu()
+{
+    if (stu_count == 0)
+    {
+        printf("暂无学生信息，无法修改！\n");
+        _getch();
+        return;
+    }
+
+    char id[20];
+    printf("请输入要修改的学生学号：");
+    scanf("%s", id);
+
+    for (int i = 0; i < stu_count; i++)
+    {
+        if (strcmp(id, stu[i].id) == 0)
+        {
+            printf("请输入新姓名：");
+            scanf("%s", stu[i].name);
+            printf("请输入新数学成绩：");
+            scanf("%f", &stu[i].score[0]);
+            printf("请输入新英语成绩：");
+            scanf("%f", &stu[i].score[1]);
+            printf("修改成功！\n");
+            _getch();
+            return;
+        }
+    }
+    printf("未找到该学生！\n");
+    _getch();
+}

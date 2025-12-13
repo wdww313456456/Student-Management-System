@@ -81,7 +81,7 @@ int main()
 			case 0:
 			{
 				
-				printf("已退出通讯录\n");
+				printf("已退出管理系统\n");
 				break;
 		        }
 			default:
@@ -121,4 +121,6 @@ void modify_stu()
     }
     printf("未找到该学生！\n");
     _getch();
+		}
+	}while(x!=0);
 }

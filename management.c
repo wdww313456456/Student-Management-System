@@ -9,7 +9,6 @@ void menu()
 	printf("***5.显示学生信息     0.退出**************\n");
 	printf("****************************************\n");
 }
-
 void add_stu()
 {
     if (stu_count >= MAX_STU)
@@ -39,6 +38,30 @@ void add_stu()
     scanf("%f", &stu[stu_count].score[1]);
     stu_count++;
     printf("添加成功！\n");
+}
+void search_stu()
+{
+    if (stu_count == 0)
+    {
+        printf("暂无学生信息！\n");
+        return;
+    }
+
+    char id[20];
+    printf("请输入要查找的学生学号：");
+    scanf("%s", id);
+
+    for (int i = 0; i < stu_count; i++)
+    {
+        if (strcmp(id, stu[i].id) == 0)
+        {
+            printf("找到学生：\n");
+            printf("学号：%s\n姓名：%s\n数学：%.1f\n英语：%.1f\n",
+                   stu[i].id, stu[i].name, stu[i].score[0], stu[i].score[1]);
+            return;
+        }
+    }
+    printf("未找到该学生！\n");
 }
 void show_stu()
 {

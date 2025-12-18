@@ -75,7 +75,36 @@ void show_stu()
 	{
 		printf("%21s%21s%10f%10f\n",stu[i].name, stu[i].id, stu[i].score[0], stu[i].score[1]);
 	}
-}	
+}
+void del_stu()
+{
+    if (stu_count == 0)
+    {
+        printf("暂无学生信息，无法删除！\n");
+        return;
+    }
+
+    show_all();
+    char id[20];
+    printf("请输入要删除的学生学号：");
+    scanf("%s", id);
+
+    for (int i = 0; i < stu_count; i++)
+    {
+        if (strcmp(id, stu[i].id) == 0)
+        
+            for (int j = i; j < stu_count - 1; j++)
+            {
+                stu[j] = stu[j + 1];
+            }
+            stu_count--;
+            printf("删除成功！\n");
+            return;
+        }
+    }
+    printf("未找到该学生！\n");
+}
+
 int main()
 {
 	int x = 0;

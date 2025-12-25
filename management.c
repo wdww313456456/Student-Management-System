@@ -96,7 +96,6 @@ void modify_stu()
     if (stu_count == 0)
     {
         printf("暂无学生信息，无法修改！\n");
-        _getch();
         return;
     }
 
@@ -115,12 +114,8 @@ void modify_stu()
             printf("请输入新英语成绩：");
             scanf("%f", &stu[i].score[1]);
             printf("修改成功！\n");
-            _getch();
             return;
         }
     }
     printf("未找到该学生！\n");
-    _getch();
-		}
-	}while(x!=0);
 }
